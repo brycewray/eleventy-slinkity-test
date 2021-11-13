@@ -3,6 +3,7 @@ const htmlmin = require('html-minifier')
 const svgContents = require("eleventy-plugin-svg-contents")
 const path = require ('path')
 const Image = require('@11ty/eleventy-img')
+const envir = process.env.ELEVENTY_ENV
 
 async function imageShortcode(src, alt) {
   let sizes = "(min-width: 1024px) 100vw, 50vw"
@@ -15,12 +16,20 @@ async function imageShortcode(src, alt) {
   if(alt === undefined) {
     // Throw an error on missing alt (alt="" works okay)
     throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`)
-  }  
+  }
+  
+  let urlPath = ''
+  if(envir == "production") {
+    urlPath = "/assets/"
+  } else {
+    urlPath = "/imgout/"
+  }
+
   let metadata = await Image(src, {
     widths: [600, 900, 1500],
     formats: ['webp', 'jpeg'],
-    urlPath: "/images/",
-    outputDir: "./_site/images/",
+    urlPath: "/imgout/",
+    outputDir: "./src/imgout/", // default is "./img"
     filenameFormat: function (id, src, width, format, options) {
       const extension = path.extname(src)
       const name = path.basename(src, extension)
@@ -59,6 +68,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy('./src/assets/js')
   eleventyConfig.addPassthroughCopy('./src/assets/svg')
   eleventyConfig.addPassthroughCopy('./src/images')
+  eleventyConfig.addPassthroughCopy('./src/imgout')
 
   eleventyConfig.addFilter("readableDate", dateObj => {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("dd LLL yyyy")

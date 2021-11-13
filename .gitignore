@@ -80,3 +80,5 @@ _data/year.json
 
 .11ty-build*
 
+src/imgout
+
