@@ -69,9 +69,12 @@ ztest.js
 src/_includes/css/*.*
 
 csshash
+csshash-out
+scsshash-out
 
 csp.txt
 
 _data/csshash.json
+_data/jshash.json
 _data/year.json
 

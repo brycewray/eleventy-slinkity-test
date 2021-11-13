@@ -1,6 +1,5 @@
 const { DateTime } = require('luxon')
 const htmlmin = require('html-minifier')
-const ErrorOverlay = require('eleventy-plugin-error-overlay')
 const svgContents = require("eleventy-plugin-svg-contents")
 const path = require ('path')
 const Image = require('@11ty/eleventy-img')
@@ -146,8 +145,6 @@ module.exports = function(eleventyConfig) {
     ghostMode: false,
     port: 3000,
   })
-
-  eleventyConfig.addPlugin(ErrorOverlay)
 
   eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
     if( outputPath.endsWith(".html") ) {

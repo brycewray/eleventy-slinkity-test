@@ -3,14 +3,17 @@
   "description": "",
   "private": true,
   "scripts": {
-    "clean": "rm -rf _site",
+    "clean": "rimraf _site",
     "hasher": "node csshash.js",
-    "start": "npm-run-all clean hasher --parallel dev:*",
-    "dev:postcss": "TAILWIND_MODE=watch postcss src/assets/css/index.css -o _site/css/index.css --config ./postcss.config.js -w",
-    "dev:slinkity": "ELEVENTY_ENV=development npx slinkity --serve --quiet --incremental",
-    "build": "NODE_ENV=production npm-run-all clean hasher --parallel prod:*",
-    "prod:postcss": "postcss src/assets/css/index.css -o _site/css/$(cat csshash) --config ./postcss.config.js",
-    "prod:slinkity": "ELEVENTY_ENV=production npx slinkity --output=./_site"
+    "start": "TAILWIND_MODE=watch NODE_ENV=development npm-run-all clean precss --parallel dev:*",
+    "precss": "tailwindcss --postcss -i src/assets/css/index.css -o _site/css/index.css",
+    "dev:twcss": "tailwindcss --postcss -i src/assets/css/index.css -o _site/css/index.css --watch",
+    "dev:slinkity": "npx slinkity --quiet --incremental --serve",
+    "build": "NODE_ENV=production npm-run-all clean precss hasher --parallel prod:*",
+    "prod:twcss": "tailwindcss --postcss -i src/assets/css/index.css -o _site/css/$(cat csshash-out) --minify",
+    "prod:slinkity": "npx slinkity --output=./_site",
+    "testbuild:bsync": "browser-sync start --server ./_site -w --no-open --no-notify --no-ghost-mode --port 3000 --ui-port 3001",
+    "testbuild": "NODE_ENV=production npm run build && npm run testbuild:bsync"
   },
   "keywords": [],
   "author": "",
@@ -24,8 +27,8 @@
     "@11ty/eleventy": "^1.0.0-beta.5",
     "@11ty/eleventy-img": "^1.0.0",
     "autoprefixer": "^10.4.0",
-    "eleventy-plugin-error-overlay": "^0.1.2",
     "eleventy-plugin-svg-contents": "^0.7.0",
+    "fast-glob": "^3.2.7",
     "glob": "^7.2.0",
     "glob-all": "^3.2.1",
     "html-minifier": "^4.0.0",
@@ -39,11 +42,10 @@
     "npm-run-all": "^4.1.5",
     "postcss": "^8.3.11",
     "postcss-cli": "^9.0.2",
-    "postcss-csso": "^5.0.1",
     "postcss-import": "^14.0.2",
-    "postcss-nesting": "^9.0.0",
     "rimraf": "^3.0.2",
     "slinkity": "^0.4.0",
-    "tailwindcss": "^3.0.0-alpha.2"
+    "tailwindcss": "^3.0.0-alpha.2",
+    "tailwindcss-logical": "^2.0.0"
   }
 }
