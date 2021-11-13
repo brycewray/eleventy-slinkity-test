@@ -45,11 +45,6 @@
     <link rel="icon" type="image/png" href="/images/icons/Eleventy-favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="/images/icons/Eleventy-favicon-96x96.png" sizes="96x96" />
     
-    {% if eleventyEnv == "production" %}
-      <link rel="preload" href="/css/{{ csshash.indexCSS }}" as="style" />
-      <link rel="stylesheet" href="/css/{{ csshash.indexCSS }}" type="text/css" />
-    {% else %}
-      <link rel="stylesheet" href="/css/index.css" type="text/css" />
-    {% endif %}
+    <link rel="stylesheet" href="/@input/assets/css/index.css" />
     
   </head>
