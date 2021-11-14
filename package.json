@@ -3,10 +3,10 @@
   "description": "",
   "private": true,
   "scripts": {
-    "clean": "rimraf _site && rimraf .11ty-build*",
-    "start": "ELEVENTY_ENV=development TAILWIND_MODE=watch NODE_ENV=development npm-run-all clean dev:slinkity",
-    "dev:slinkity": "slinkity --quiet --serve",
-    "build": "ELEVENTY_ENV=production NODE_ENV=production npm-run-all clean --parallel prod:slinkity",
+    "clean": "rimraf _site && rimraf src/imgout && rimraf img",
+    "start": "NODE_ENV=development ELEVENTY_ENV=development TAILWIND_MODE=watch npm-run-all clean dev:slinkity",
+    "dev:slinkity": "slinkity --quiet --serve --incremental",
+    "build": "NODE_ENV=production ELEVENTY_ENV=production npm-run-all clean --parallel prod:slinkity",
     "prod:slinkity": "slinkity",
     "testbuild:bsync": "browser-sync start --server ./_site -w --no-open --no-notify --no-ghost-mode --port 3000 --ui-port 3001",
     "testbuild": "npm run build && npm run testbuild:bsync"
