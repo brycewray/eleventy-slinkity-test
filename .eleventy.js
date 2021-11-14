@@ -8,23 +8,49 @@ const envir = process.env.ELEVENTY_ENV
 async function imageShortcode(src, alt) {
   let sizes = "(min-width: 1024px) 100vw, 50vw"
   let srcPrefix = `./src/assets/images/`
+  // ... so you don't have to enter path info for each ref,
+  //     but also means you have to store them there
+  //     --- which probably is best (IMHO)
   src = srcPrefix + src
+  console.log(`Generating image(s) from:  ${src}`)
+  if(alt === undefined) {
+    // Throw an error on missing alt (alt="" works okay)
+    throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`)
+  }
+  
+  let urlPathCall = ''
+  if(envir == "production") {
+    urlPathCall = "/assets/"
+  } else {
+    urlPathCall = "/imgout/"
+  }
+
   let metadata = await Image(src, {
-    widths: [300, 600],
-    formats: ["webp", "jpeg"],
-  });
-
-  let imageAttributes = {
-    alt,
-    sizes,
-    loading: "lazy",
-    decoding: "async",
-  };
-
-  // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
-  return Image.generateHTML(metadata, imageAttributes);
+    widths: [600, 900, 1500],
+    formats: ['webp', 'jpeg'],
+    urlPath: urlPathCall,
+    outputDir: "./src/imgout/", // default is "./img"
+    filenameFormat: function (id, src, width, format, options) {
+      const extension = path.extname(src)
+      const name = path.basename(src, extension)
+      return `${name}-${width}w.${format}`
+    }
+  })  
+  let lowsrc = metadata.jpeg[0]
+  let highsrc = metadata.jpeg[metadata.jpeg.length - 1]
+  return `<picture>
+    ${Object.values(metadata).map(imageFormat => {
+      return `  <source type="${imageFormat[0].sourceType}" srcset="${imageFormat.map(entry => entry.srcset).join(", ")}" sizes="${sizes}">`
+    }).join("\n")}
+    <img
+      src="${lowsrc.url}"
+      width="${highsrc.width}"
+      height="${highsrc.height}"
+      alt="${alt}"
+      loading="lazy"
+      decoding="async">
+  </picture>`
 }
-
 module.exports = function(eleventyConfig) {
   
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode)
@@ -41,8 +67,8 @@ module.exports = function(eleventyConfig) {
   // eleventyConfig.addPassthroughCopy('./src/assets/js')
   // eleventyConfig.addPassthroughCopy('./src/assets/svg')
   eleventyConfig.addPassthroughCopy('src/images')
-  // eleventyConfig.addPassthroughCopy('src/imgout')
-  eleventyConfig.addPassthroughCopy('img')
+  eleventyConfig.addPassthroughCopy('src/imgout')
+  // eleventyConfig.addPassthroughCopy('img')
 
   eleventyConfig.addFilter("readableDate", dateObj => {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("dd LLL yyyy")
