@@ -6,7 +6,7 @@
     "clean": "rimraf _site && rimraf .11ty-build* && rimraf src/imgout",
     "start": "ELEVENTY_ENV=development TAILWIND_MODE=watch NODE_ENV=development npm-run-all clean --parallel dev:*",
     "dev:slinkity": "slinkity --quiet --incremental --serve",
-    "build": "ELEVENTY_ENV=production NODE_ENV=production npm-run-all clean --parallel prod:*",
+    "build": "ELEVENTY_ENV=production NODE_ENV=production npm-run-all --parallel prod:*",
     "prod:slinkity": "slinkity",
     "testbuild:bsync": "browser-sync start --server ./_site -w --no-open --no-notify --no-ghost-mode --port 3000 --ui-port 3001",
     "testbuild": "npm run build && npm run testbuild:bsync"
