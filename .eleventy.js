@@ -41,7 +41,7 @@ module.exports = function(eleventyConfig) {
   // eleventyConfig.addPassthroughCopy('./src/assets/js')
   // eleventyConfig.addPassthroughCopy('./src/assets/svg')
   eleventyConfig.addPassthroughCopy('src/images')
-  eleventyConfig.addPassthroughCopy('src/imgout')
+  // eleventyConfig.addPassthroughCopy('src/imgout')
   eleventyConfig.addPassthroughCopy('img')
 
   eleventyConfig.addFilter("readableDate", dateObj => {
