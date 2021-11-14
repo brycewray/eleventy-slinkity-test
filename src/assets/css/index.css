@@ -1,7 +1,12 @@
-@import 'nav.css';
+@import 'reset.css';
+@import 'fonts_Inter.css';
+/* @import 'fonts_PublicSans.css'; */
 @import 'prismjs.css';
 @import 'tailwindcss/base';
 @import 'layout.css';
+@import 'nav.css';
 @import 'tailwindcss/components';
+@import 'intervf.css';
 @import 'ffoxobliq.css';
+/* above file for system fonts stack */
 @import 'tailwindcss/utilities';
