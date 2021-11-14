@@ -18,17 +18,17 @@ async function imageShortcode(src, alt) {
     throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`)
   }
   
-  let urlPath = ''
+  let urlPathCall = ''
   if(envir == "production") {
-    urlPath = "/assets/"
+    urlPathCall = "/assets/"
   } else {
-    urlPath = "/imgout/"
+    urlPathCall = "/imgout/"
   }
 
   let metadata = await Image(src, {
     widths: [600, 900, 1500],
     formats: ['webp', 'jpeg'],
-    urlPath: "/imgout/",
+    urlPath: urlPathCall,
     outputDir: "./src/imgout/", // default is "./img"
     filenameFormat: function (id, src, width, format, options) {
       const extension = path.extname(src)
@@ -68,7 +68,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy('./src/assets/js')
   eleventyConfig.addPassthroughCopy('./src/assets/svg')
   eleventyConfig.addPassthroughCopy('./src/images')
-  eleventyConfig.addPassthroughCopy('./src/imgout')
+  eleventyConfig.addPassthroughCopy('./imgout')
 
   eleventyConfig.addFilter("readableDate", dateObj => {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("dd LLL yyyy")
