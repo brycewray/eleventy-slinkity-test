@@ -28,12 +28,12 @@ Text here.
 
 And here's an example of how to use the `image` shortcode (which uses the `eleventy-img` plugin):
 
-The following image(s) is/are from my Cloudinary account and the Cloudinary React component, which is possible in Slinkity!
+The following images are from my Cloudinary account and the [Cloudinary React component](https://github.com/cloudinary/cloudinary-react), which is possible in [Slinkity](https://slinkity.dev)!
 
-{% react 'components/ImgcReact', src='Early-Web-font-grfx-1-2018-10-16_1218x1296.jpg', alt='Image from Apple website in 1999 showing graphic elements as text', 'render'='lazy' %}
+{% react 'components/ImgcReact', src='sunset-prairie-679014_2500x1619.jpg', alt='Aerial view of sunset over a winding river', 'render'='lazy' %}
 
 <br />
 
-{% react 'components/ImgcReact', src="screen-cap-from-Pippin-Williamson-s-page-builders-review_986x482.jpg", alt="Screen capture showing shortcodes from a WordPress page builder", 'render'='lazy' %}
+{% react 'components/ImgcReact', src="colorful-flower-field-250016_4984x3607.jpg", alt="Colorful field of flowers under a beautiful blue sky", 'render'='lazy' %}
 
 Closing text. That ends Post 2!
