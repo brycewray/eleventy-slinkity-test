@@ -34,10 +34,10 @@ The previous was from Eleventy Image (which probably didn't work for reasons whi
 
 The following image(s) is/are from my Cloudinary account and the Cloudinary React component, which is possible in Slinkity!
 
-{% react 'components/ImgcReact', src='Early-Web-font-grfx-1-2018-10-16_1218x1296.jpg', alt='Image from Apple website in 1999 showing graphic elements as text', width=1218, height=1296, 'render'='lazy' %}
+{% react 'components/ImgcReact', src='Early-Web-font-grfx-1-2018-10-16_1218x1296.jpg', alt='Image from Apple website in 1999 showing graphic elements as text', 'render'='lazy' %}
 
 <br />
 
-{% react 'components/ImgcReact', src="screen-cap-from-Pippin-Williamson-s-page-builders-review_986x482.jpg", alt="Screen capture showing shortcodes from a WordPress page builder", width=986, height=482, 'render'='lazy' %}
+{% react 'components/ImgcReact', src="screen-cap-from-Pippin-Williamson-s-page-builders-review_986x482.jpg", alt="Screen capture showing shortcodes from a WordPress page builder", 'render'='lazy' %}
 
 Closing text. That ends Post 2!
