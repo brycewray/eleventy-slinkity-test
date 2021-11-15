@@ -30,4 +30,10 @@ And here's an example of how to use the `image` shortcode (which uses the `eleve
 
 {% image "Early-Web-font-grfx-1-2018-10-16_1218x1296.jpg", "Image from Apple website in 1999 showing graphic elements as text" %}
 
+The previous was from Eleventy Image (which probably didn't work for reasons which are TBD).
+
+The following is using my Cloudinary account and the Cloudinary React component, which is possible in Slinkity!
+
+{% react 'components/ImgcReact', src='Early-Web-font-grfx-1-2018-10-16_1218x1296.jpg', alt='Image from Apple website in 1999 showing graphic elements as text', 'render'='lazy' %}
+
 Closing text. That ends Post 2!
