@@ -58,4 +58,12 @@ When run, the above would output:
 ```
 {% endraw %}
 
+As of now, the Eleventy Image plugin doesn't work in Slinkity (it's a WIP).
+
+**However** . . .
+
+The following image is from my Cloudinary account and the [Cloudinary React component](https://github.com/cloudinary/cloudinary-react), the use of which is quite possible in [Slinkity](https://slinkity.dev)!
+
+{% react 'components/ImgcReact', url='mail-old-mailboxes-1048452_3888x2592.jpg', alt='Row of old mailboxes in apparently rural setting', width='3988', height='2592', 'render'='static' %}
+
 Closing text. That ends Post 4!

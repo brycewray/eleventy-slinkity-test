@@ -21,12 +21,16 @@ And after another paragraph or two or three, you may want to add a subheading, w
 
 Text here.
 
-And here are some examples of how to use the `image` shortcode (which uses the `eleventy-img` plugin):
+As of now, the Eleventy Image plugin doesn't work in Slinkity (it's a WIP).
 
-{% image "Typography-scr-cap-2-2018-10-16.jpg", "Thin and dim text that is hard to read" %}
+**However** . . .
 
-{% image "Typography-scr-cap-3-2018-10-16.jpg", "More thin and dim text that is hard to read" %}
+The following images are from my Cloudinary account and the [Cloudinary React component](https://github.com/cloudinary/cloudinary-react), the use of which is quite possible in [Slinkity](https://slinkity.dev)!
 
-{% image "Typography-scr-cap-4-2018-10-16.jpg", "Still more thin and dim text that is hard to read" %}
+{% react 'components/ImgcReact', url='Typography-scr-cap-2-2018-10-16_1344x200.jpg', alt='Thin and dim text that is hard to read', width='1344', height='200', 'render'='static' %}
+
+{% react 'components/ImgcReact', url='Typography-scr-cap-3-2018-10-16_1398x252.jpg', alt='More thin and dim text that is hard to read', width='1398', height='252', 'render'='static' %}
+
+{% react 'components/ImgcReact', url='Typography-scr-cap-4-2018-10-16_1398x164.jpg', alt='Still more thin and dim text that is hard to read', width='1398', height='164', 'render'='static' %}
 
 Closing text. That ends Post 1!
