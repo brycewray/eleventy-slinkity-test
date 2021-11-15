@@ -22,7 +22,7 @@ export default function ImgcReact({
           fetchFormat="auto" 
           width="auto" 
           crop="scale"
-          />
+         />
       </Image>
     </CloudinaryContext>
   )
