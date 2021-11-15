@@ -12,6 +12,7 @@ export default function ImgcReact({
         dpr="auto" 
         responsive 
         responsiveUseBreakpoints="true" 
+        width="auto" 
         loading="lazy" 
         publicId={src} 
         alt={alt}
@@ -19,9 +20,7 @@ export default function ImgcReact({
         <Placeholder />
         <Transformation 
           quality="auto" 
-          fetchFormat="auto" 
-          width="auto" 
-          crop="scale"
+          fetchFormat="auto"
          />
       </Image>
     </CloudinaryContext>
