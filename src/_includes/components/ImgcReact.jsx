@@ -5,7 +5,7 @@ export default function ImgcReact({
   src, 
   alt='Image ALT'
 }) {
-  render: 'lazy';
+  render: 'lazy'
   return (
     <CloudinaryContext cloudName="brycewray-com">
       <Image 
