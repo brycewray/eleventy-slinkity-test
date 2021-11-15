@@ -26,14 +26,16 @@ And after another paragraph or two or three, you may want to add a subheading, w
 
 Text here.
 
-And here's an example of how to use the `image` shortcode (which uses the `eleventy-img` plugin):
+As of now, the Eleventy Image plugin doesn't work in Slinkity (it's a WIP).
 
-The following images are from my Cloudinary account and the [Cloudinary React component](https://github.com/cloudinary/cloudinary-react), which is possible in [Slinkity](https://slinkity.dev)!
+**However** . . .
 
-{% react 'components/ImgcReact', src='sunset-prairie-679014_2500x1619.jpg', alt='Aerial view of sunset over a winding river', 'render'='lazy' %}
+The following images are from my Cloudinary account and the [Cloudinary React component](https://github.com/cloudinary/cloudinary-react), the use of which is quite possible in [Slinkity](https://slinkity.dev)!
+
+{% react 'components/ImgcReact', url='sunset-prairie-679014_2500x1619.jpg', alt='Test1', width='2500', height='2619', 'render'='static' %}
 
 <br />
 
-{% react 'components/ImgcReact', src="colorful-flower-field-250016_4984x3607.jpg", alt="Colorful field of flowers under a beautiful blue sky", 'render'='lazy' %}
+{% react 'components/ImgcReact', url="colorful-flower-field-250016_4984x3607.jpg", alt="Test2", width='4984', height='3607', 'render'='static' %}
 
 Closing text. That ends Post 2!
