@@ -25,7 +25,7 @@ As of now, the Eleventy Image plugin doesn't work in Slinkity (it's a WIP).
 
 **However** . . .
 
-The following images are from my Cloudinary account and the [Cloudinary React component](https://github.com/cloudinary/cloudinary-react), the use of which is quite possible in [Slinkity](https://slinkity.dev)!
+The following images are from my Cloudinary account and a React component, the use of which is quite possible in [Slinkity](https://slinkity.dev)!
 
 {% react 'components/ImgcReact', url='Typography-scr-cap-2-2018-10-16_1344x200.jpg', alt='Thin and dim text that is hard to read', width='1344', height='200', 'render'='static' %}
 

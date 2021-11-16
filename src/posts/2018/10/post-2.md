@@ -30,7 +30,7 @@ As of now, the Eleventy Image plugin doesn't work in Slinkity (it's a WIP).
 
 **However** . . .
 
-The following images are from my Cloudinary account and the [Cloudinary React component](https://github.com/cloudinary/cloudinary-react), the use of which is quite possible in [Slinkity](https://slinkity.dev)!
+The following images are from my Cloudinary account and a React component, the use of which is quite possible in [Slinkity](https://slinkity.dev)!
 
 {% react 'components/ImgcReact', url='sunset-prairie-679014_2500x1619.jpg', alt='Test1', width='2500', height='2619', 'render'='static' %}
 

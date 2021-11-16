@@ -62,7 +62,7 @@ As of now, the Eleventy Image plugin doesn't work in Slinkity (it's a WIP).
 
 **However** . . .
 
-The following image is from my Cloudinary account and the [Cloudinary React component](https://github.com/cloudinary/cloudinary-react), the use of which is quite possible in [Slinkity](https://slinkity.dev)!
+The following images are from my Cloudinary account and a React component, the use of which is quite possible in [Slinkity](https://slinkity.dev)!
 
 {% react 'components/ImgcReact', url='spacex-OHOU-5UVIYQ-unsplash_3000x2000.jpg', alt='SpaceX rocket launching from the Kennedy Space Center in Florida', width='3000', height='2000', 'render'='static' %}
 
