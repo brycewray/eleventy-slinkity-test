@@ -49,7 +49,7 @@ export default function ImgcReact({
   return (
     <>
     <div className={`${divClass} bg-center bg-no-repeat bg-cover`}>
-      <img alt={alt} className={nscClass} src={sz0600} alt={alt} aspect-ratio={`${width} / ${height}`} srcSet={`${sz0300}, ${sz0600}, ${sz0900}, ${sz1200}, ${sz1500}`} width={width} height={height} loading="lazy" sizes={dataSzes} />
+      <img alt={alt} className={imgClass} src={sz0600} aspect-ratio={`${width} / ${height}`} srcSet={`${sz0300}, ${sz0600}, ${sz0900}, ${sz1200}, ${sz1500}`} width={width} height={height} loading="lazy" sizes={dataSzes} />
     </div>
     </>
   )
