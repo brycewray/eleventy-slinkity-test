@@ -114,6 +114,7 @@ module.exports = function(eleventyConfig) {
   let markdownItPrism = require('markdown-it-prism')
   let markdownItBrakSpans = require('markdown-it-bracketed-spans')
   let markdownItLinkAttrs = require('markdown-it-link-attributes')
+  let markdownItAttrs = require('markdown-it-attrs')
   let markdownItOpts = {
     html: true,
     linkify: false,
@@ -130,6 +131,7 @@ module.exports = function(eleventyConfig) {
       rel: 'noreferrer noopener'
     }
   })
+  markdownEngine.use(markdownItAttrs)
   // START, de-bracketing footnotes
   //--- see http://dirtystylus.com/2020/06/15/eleventy-markdown-and-footnotes/
   markdownEngine.renderer.rules.footnote_caption = (tokens, idx) => {
