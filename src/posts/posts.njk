@@ -19,23 +19,23 @@ pagination:
     <div>
       <p class="posts-pagerThingP">
         {% if pagination.firstPageHref != page.url %}
-        <a class="icon" aria-label="First page" href="{{ pagination.firstPageHref}}">{{ '/src/assets/svg/svgPrevPageIcon.svg' | svgContents | safe }}{{ '/src/assets/svg/svgPrevPageIcon.svg' | svgContents | safe }}</a>
+        <a class="icon" aria-label="First page" href="{{ pagination.firstPageHref}}">&#9664;&#9664;</a>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a class="icon" aria-label="Previous page" href="{{ pagination.previousPageHref }}">{{ '/src/assets/svg/svgPrevPageIcon.svg' | svgContents | safe }}</a>
+        <a class="icon" aria-label="Previous page" href="{{ pagination.previousPageHref }}">&#9664;</a>
         {% else %}
-        <span class="posts-pagerGray">{{ '/src/assets/svg/svgFirstPageIcon.svg' | svgContents | safe }}{{ '/src/assets/svg/svgFirstPageIcon.svg' | svgContents | safe }}</span>
+        <span class="posts-pagerGray">&#9664;&#9664;</span>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <span class="posts-pagerGray">{{ '/src/assets/svg/svgFirstPageIcon.svg' | svgContents | safe }}</span>
+        <span class="posts-pagerGray">&#9664;</span>
         {% endif %}
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         {% if pagination.lastPageHref != page.url %}
-        <a class="icon" aria-label="Next page" href="{{ pagination.nextPageHref }}">{{ '/src/assets/svg/svgNextPageIcon.svg' | svgContents | safe }}</a>
+        <a class="icon" aria-label="Next page" href="{{ pagination.nextPageHref }}">&#9654;</a>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a class="icon" aria-label="Next page" href="{{ pagination.lastPageHref }}">{{ '/src/assets/svg/svgNextPageIcon.svg' | svgContents | safe }}{{ '/src/assets/svg/svgNextPageIcon.svg' | svgContents | safe }}</a>
+        <a class="icon" aria-label="Next page" href="{{ pagination.lastPageHref }}">&#9654;&#9654;</a>
         {% else %}
-        <span class="posts-pagerGray">{{ '/src/assets/svg/svgLastPageIcon.svg' | svgContents | safe }}</span>
+        <span class="posts-pagerGray">&#9654;</span>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <span class="posts-pagerGray">{{ '/src/assets/svg/svgLastPageIcon.svg' | svgContents | safe }}{{ '/src/assets/svg/svgLastPageIcon.svg' | svgContents | safe }}</span>
+        <span class="posts-pagerGray">&#9654;&#9654;</span>
         {% endif %}
       </p>
       <hr class="paginatorTop" />
@@ -57,23 +57,23 @@ pagination:
       <hr class="paginatorBottom" />
       <p class="posts-pagerThingP">
         {% if pagination.firstPageHref != page.url %}
-        <a class="icon" aria-label="First page" href="{{ pagination.firstPageHref}}">{{ '/src/assets/svg/svgPrevPageIcon.svg' | svgContents | safe }}{{ '/src/assets/svg/svgPrevPageIcon.svg' | svgContents | safe }}</a>
+        <a class="icon" aria-label="First page" href="{{ pagination.firstPageHref}}">&#9664;&#9664;</a>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a class="icon" aria-label="Previous page" href="{{ pagination.previousPageHref }}">{{ '/src/assets/svg/svgPrevPageIcon.svg' | svgContents | safe }}</a>
+        <a class="icon" aria-label="Previous page" href="{{ pagination.previousPageHref }}">&#9664;</a>
         {% else %}
-        <span class="posts-pagerGray">{{ '/src/assets/svg/svgFirstPageIcon.svg' | svgContents | safe }}{{ '/src/assets/svg/svgFirstPageIcon.svg' | svgContents | safe }}</span>
+        <span class="posts-pagerGray">&#9664;&#9664;</span>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <span class="posts-pagerGray">{{ '/src/assets/svg/svgFirstPageIcon.svg' | svgContents | safe }}</span>
+        <span class="posts-pagerGray">&#9664;</span>
         {% endif %}
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         {% if pagination.lastPageHref != page.url %}
-        <a class="icon" aria-label="Next page" href="{{ pagination.nextPageHref }}">{{ '/src/assets/svg/svgNextPageIcon.svg' | svgContents | safe }}</a>
+        <a class="icon" aria-label="Next page" href="{{ pagination.nextPageHref }}">&#9654;</a>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a class="icon" aria-label="Next page" href="{{ pagination.lastPageHref }}">{{ '/src/assets/svg/svgNextPageIcon.svg' | svgContents | safe }}{{ '/src/assets/svg/svgNextPageIcon.svg' | svgContents | safe }}</a>
+        <a class="icon" aria-label="Next page" href="{{ pagination.lastPageHref }}">&#9654;&#9654;</a>
         {% else %}
-        <span class="posts-pagerGray">{{ '/src/assets/svg/svgLastPageIcon.svg' | svgContents | safe }}</span>
+        <span class="posts-pagerGray">&#9654;</span>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <span class="posts-pagerGray">{{ '/src/assets/svg/svgLastPageIcon.svg' | svgContents | safe }}{{ '/src/assets/svg/svgLastPageIcon.svg' | svgContents | safe }}</span>
+        <span class="posts-pagerGray">&#9654;&#9654;</span>
         {% endif %}
       </p>
 		</div>
