@@ -10,7 +10,7 @@
 }
 
 .wht {
-  color: #fff;
+  color: hsl(0, 0%, 100%);
 }
 
 .smallCaps {
@@ -37,6 +37,34 @@
   font-size: var.$pokey;
 }
 
+.eightyFive {
+  font-size: var.$eightyFive;
+}
+
+.seventyFive {
+  font-size: var.$seventyFive;
+}
+
+.sixtyFive {
+  font-size: var.$sixtyFive;
+}
+
+.topM2 {
+  margin-top: 2em;
+}
+
+.btmM1 {
+  margin-bottom: 1em;
+}
+
+.btmM10 {
+  margin-bottom: 10em;
+}
+
+.tightLead {
+  line-height: 1.25;
+}
+
 .text {
   &-nowrap, .nobrk {
     white-space: nowrap;
@@ -59,13 +87,25 @@
   }
 }
 .bg-primary {
-  background-color: var.$blue !important;
+  background-color: var.$blue;
+}
+
+.bg-center {
+  background-position: center !important;
+}
+
+.bg-no-repeat {
+  background-repeat: no-repeat !important;
+}
+
+.bg-cover {
+  background-size: cover !important;
 }
 
 .btn-primary {
   background-color: var.$blue;
   border-color: var.$blue;
-  color: #fff;
+  color: hsl(0, 0%, 100%);
   border-radius: 6px;
   padding: 0.25rem 0.5rem;
 }
@@ -83,18 +123,35 @@
   display: none;
 }
 
-.yellowBox {
+.yellowBox, .blueBox {
   font-family: var.$sans-serif;
   display: block;
   box-sizing: border-box;
-  background: #feef89;
-  border: 1px solid #333;
+  border: 1px solid hsl(0, 0%, 20%);
   margin: 0.5rem auto;
   width: 100%;
   padding: 1.5rem;
   @media (prefers-color-scheme: dark) {
-    background: #332200;
     border: 1px solid var.$grey-1;
+  }
+}
+
+.yellowBox + hr, .blueBox + hr { // for situations like in "Gems in the rough #4" as of 2021-04-15
+  margin-top: 1.75em;
+}
+
+.yellowBox {
+  background: hsl(52, 100%, 85%);
+  @media (prefers-color-scheme: dark) {
+    background: hsl(40, 100%, 10%);
+  }
+}
+
+.blueBox {
+  background: hsl(200, 100%, 95%);
+  font-size: 85%;
+  @media (prefers-color-scheme: dark) {
+    background: hsl(200, 100%, 20%);
   }
 }
 
@@ -104,11 +161,16 @@ img.containedImage {
   height: auto;
   padding: 0;
   margin: 0 auto;
-  margin-right: auto;
-  margin-left: auto;
 }
 
-.imgcCaption, .lazypicturecaption {
+.red {
+  color: var.$red;
+  @media (prefers-color-scheme: dark) {
+    color: var.$red-dark-mode;
+  }
+}
+
+.imgcCaption, .imgCaption, .lazypicturecaption {
   font-family: var.$sans-serif;
   padding: 0;
   margin-block-start: 0.5em;
@@ -117,8 +179,99 @@ img.containedImage {
   text-align: center;
 }
 
+.EICapt { // for use with images used with Eleventy Image which have captions
+  margin-bottom: -0.5em;
+}
+
 .relative {
   position: relative;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.punctuationExample {
+  font-size: 1.5em;
+  font-weight: normal;
+  font-family: var.$serif;
+  text-align: center;
+}
+
+.indentAfterLI {
+  margin-left: 2em; // 2em with Public Sans, 2.25em with Inter
+  @media screen and (min-width: var.$bkpt_2xl) {
+    margin-left: 2em;
+  }
+}
+
+/* === start, borrowed from TWCSS === */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.inline {
+  display: inline;
+}
+
+/* === end, borrowed from TWCSS === */
+
+/* start, for imgc.html */
+
+.imgc {
+  &-div {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+/* end, for imgc.html */
+
+/* start, for 404 page */
+
+.FourOhFour {
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  h1 {
+    font-size: var.$biggest;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    @media screen and (min-width: var.$bkpt_lg) {
+      font-size: 3.25rem;
+    }
+    @media screen and (min-width: var.$bkpt_xl) {
+      font-size: 3.5rem;
+    }
+  }
+  p {
+    font-size: var.$slightlybig;
+  }
+  .bottom {
+    margin-bottom: 10em;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade {
+  animation: fadeIn 1s ease-in-out;
 }
 
 // === end, utility classes
