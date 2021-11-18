@@ -21,16 +21,12 @@ And after another paragraph or two or three, you may want to add a subheading, w
 
 Text here.
 
-As of now, the Eleventy Image plugin doesn't work in Slinkity (it's a WIP).
+The following image content comes from my Cloudinary account and my `imgc` shortcode.
 
-**However** . . .
+{% imgc 'Typography-scr-cap-2-2018-10-16_1344x200.jpg', 'Thin and dim text that is hard to read', 1344, 200 %}
 
-The following images are from my Cloudinary account and a React component, the use of which is quite possible in [Slinkity](https://slinkity.dev)!
+{% imgc 'Typography-scr-cap-3-2018-10-16_1398x252.jpg', 'More thin and dim text that is hard to read',  1398, 252 %}
 
-{% react 'components/ImgcReact', url='Typography-scr-cap-2-2018-10-16_1344x200.jpg', alt='Thin and dim text that is hard to read', width='1344', height='200', 'render'='static' %}
-
-{% react 'components/ImgcReact', url='Typography-scr-cap-3-2018-10-16_1398x252.jpg', alt='More thin and dim text that is hard to read', width='1398', height='252', 'render'='static' %}
-
-{% react 'components/ImgcReact', url='Typography-scr-cap-4-2018-10-16_1398x164.jpg', alt='Still more thin and dim text that is hard to read', width='1398', height='164', 'render'='static' %}
+{% imgc 'Typography-scr-cap-4-2018-10-16_1398x164.jpg', 'Still more thin and dim text that is hard to read', 1398, 164 %}
 
 Closing text. That ends Post 1!

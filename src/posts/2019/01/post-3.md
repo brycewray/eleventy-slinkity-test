@@ -21,12 +21,8 @@ And after another paragraph or two or three, you may want to add a subheading, w
 
 Text here.
 
-As of now, the Eleventy Image plugin doesn't work in Slinkity (it's a WIP).
+The following image content comes from my Cloudinary account and my `imgc` shortcode.
 
-**However** . . .
-
-The following images are from my Cloudinary account and a React component, the use of which is quite possible in [Slinkity](https://slinkity.dev)!
-
-{% react 'components/ImgcReact', url='screen-cap-from-Pippin-Williamson-s-page-builders-review_986x482.jpg', alt='Screen capture showing shortcodes from a WordPress page builder', width='986', height='482', 'render'='static' %}
+{% imgc 'screen-cap-from-Pippin-Williamson-s-page-builders-review_986x482.jpg', 'Screen capture showing shortcodes from a WordPress page builder', 986, 482 %}
 
 Closing text. That ends Post 3!

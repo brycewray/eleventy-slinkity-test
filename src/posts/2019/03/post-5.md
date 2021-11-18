@@ -58,12 +58,8 @@ When run, the above would output:
 ```
 {% endraw %}
 
-As of now, the Eleventy Image plugin doesn't work in Slinkity (it's a WIP).
+The following image content comes from my Cloudinary account and my `imgc` shortcode.
 
-**However** . . .
-
-The following images are from my Cloudinary account and a React component, the use of which is quite possible in [Slinkity](https://slinkity.dev)!
-
-{% react 'components/ImgcReact', url='stones-stack-3841920_6000x4000.jpg', alt='A stack of smooth stones on a beach near an ocean', width='6000', height='4000', 'render'='static' %}
+{% imgc 'stones-stack-3841920_6000x4000.jpg', 'A stack of smooth stones on a beach near an ocean', 6000, 4000 %}
 
 Closing text. That ends Post 5!

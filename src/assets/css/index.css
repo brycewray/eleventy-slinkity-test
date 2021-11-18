@@ -7,6 +7,6 @@
 @import 'nav.css';
 @import 'tailwindcss/components';
 @import 'intervf.css';
-@import 'ffoxobliq.css';
+/* @import 'ffoxobliq.css'; */
 /* above file for system fonts stack */
 @import 'tailwindcss/utilities';

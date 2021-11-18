@@ -5,7 +5,7 @@
 
 .lazy:not(.initial) {
   @apply transition-opacity ease-in-out;
-  transition: opacity 0.4s;
+  transition: opacity 1s;
 }
 
 .lazy.initial,
