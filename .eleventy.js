@@ -7,7 +7,7 @@ const envir = process.env.ELEVENTY_ENV
 
 async function imageShortcode(src, alt) {
   let sizes = "(min-width: 1024px) 100vw, 50vw"
-  let srcPrefix = `./src/assets/images/`
+  let srcPrefix = `./src/images-plugin/`
   // ... so you don't have to enter path info for each ref,
   //     but also means you have to store them there
   //     --- which probably is best (IMHO)
@@ -64,11 +64,11 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy('robots.txt')
   eleventyConfig.addPassthroughCopy('favicon.ico')
-  eleventyConfig.addPassthroughCopy("./src/assets/fonts")
+  eleventyConfig.addPassthroughCopy("./src/fonts")
   eleventyConfig.addPassthroughCopy("./src/assets/js")
   eleventyConfig.addPassthroughCopy('./src/assets/svg')
-  eleventyConfig.addPassthroughCopy('src/images')
-  eleventyConfig.addPassthroughCopy('src/imgout')
+  eleventyConfig.addPassthroughCopy('./src/images')
+  eleventyConfig.addPassthroughCopy('./src/assets/images-plugin')
   // eleventyConfig.addPassthroughCopy('img')
 
   eleventyConfig.addFilter("readableDate", dateObj => {
@@ -145,14 +145,14 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.setLibrary("md", markdownEngine)
 
   eleventyConfig.addWatchTarget("src/**/*.js")
-  eleventyConfig.addWatchTarget("./src/assets/css/*.css")
+  eleventyConfig.addWatchTarget("./src/**/*.css")
   eleventyConfig.addWatchTarget("./src/**/*.md")
 
   eleventyConfig.setBrowserSyncConfig({
     ...eleventyConfig.browserSyncConfig,
     files: [
       "src/**/*.js",
-      "src/assets/css/*.css",
+      "src/**/*.css",
       "src/**/*.md",
     ],
     ghostMode: false,
