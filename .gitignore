@@ -83,3 +83,7 @@ _data/year.json
 src/imgout
 img
 
+start.sh
+build.sh
+testbuild.sh
+push.sh
